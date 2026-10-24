@@ -1,6 +1,9 @@
 [README.md](https://github.com/user-attachments/files/22319647/README.md)
 
 # RIF — Resonant Inference Field (Bentov‑2.0)
+
+[Albert Tan Sin Hon's website](https://www.alberttansinhon.com/)
+
 **A research toolkit to operationalize the Resonant Inference Field hypothesis**: conscious access emerges when nested visceral pacers (heart, breath, stomach) phase‑align with eigenmodes of the cortical connectome, enabling a low‑energy, metastable global broadcast.
 
 > Scientific, unemotional, falsifiable. No mysticism. Just signals, modes, and tests.
