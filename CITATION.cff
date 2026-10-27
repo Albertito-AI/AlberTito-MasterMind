@@ -1,0 +1,13 @@
+
+cff-version: 1.2.0
+title: "RIF — Resonant Inference Field (Bentov-2.0)"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - family-names: Tan
+    given-names: Albert
+  - name: "RIF Contributors"
+version: "0.1.0"
+date-released: 2025-09-14
+repository-code: "https://github.com/YOUR-ORG/rif-project"
+license: Apache-2.0

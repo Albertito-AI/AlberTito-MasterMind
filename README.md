@@ -1,92 +1,72 @@
-[README.md](https://github.com/user-attachments/files/22319647/README.md)
+# RIF: Resonant Inference Field
 
-# RIF — Resonant Inference Field (Bentov‑2.0)
+**A public research reference implementation for testing the Resonant Inference Field hypothesis.**
 
-[Albert Tan Sin Hon's website](https://www.alberttansinhon.com/)
+[Albert Tan Sin Hon](https://www.alberttansinhon.com/) and contributors are developing a falsifiable computational framework for examining whether nested visceral rhythms and cortical connectome modes exhibit measurable phase relationships associated with conscious access.
 
-**A research toolkit to operationalize the Resonant Inference Field hypothesis**: conscious access emerges when nested visceral pacers (heart, breath, stomach) phase‑align with eigenmodes of the cortical connectome, enabling a low‑energy, metastable global broadcast.
+**Status:** early research prototype. The repository contains toy simulations, mathematical utilities and research-governance templates. It does not establish the hypothesis, provide a clinical conclusion or constitute a medical device.
 
-> Scientific, unemotional, falsifiable. No mysticism. Just signals, modes, and tests.
+## Public research layer
 
-## TL;DR
-- Compute **RIF‑coherence** (phase bundling) across viscera and cortical modes.
-- Derive **connectome harmonics** (graph Laplacian eigenmodes) from structural connectivity.
-- Run example simulations; extend to EEG/MEG/iEEG + ECG/RESP/EGG.
-- Test predictions: PCI ↑, detection thresholds ↓ when RIF‑coherence ↑.
+The public repository is intended to support scrutiny, replication and constructive criticism. It may contain:
+
+- source code for RIF-coherence and connectome-harmonic calculations;
+- synthetic or openly licensed examples;
+- reproducible tests, methods and research documentation;
+- ethics and data-governance templates that contain no participant information.
+
+Human-subject data, protected health information, consent records, participant identifiers, private ethics correspondence, credentials and unpublished partner data must remain outside this repository. See [PUBLIC_PRIVATE_BOUNDARY.md](PUBLIC_PRIVATE_BOUNDARY.md).
 
 ## Quickstart
+
+Python 3.10 or later is required. The installable project is in `rif-project/`.
+
 ```bash
-# Clone your repo after creating it on GitHub, then:
-python -m venv .venv && source .venv/bin/activate  # (Windows: .venv\Scripts\activate)
-pip install -U pip
-pip install -e .[dev,analysis]
+git clone https://github.com/Albertito-AI/AlberTito-MasterMind.git
+cd AlberTito-MasterMind/rif-project
+python -m venv .venv
+# macOS / Linux
+. .venv/bin/activate
+# Windows PowerShell: .venv\Scripts\Activate.ps1
+python -m pip install -U pip
+python -m pip install -e '.[dev,analysis]'
 pytest -q
 python examples/01_simulate_and_compute_rif.py
 ```
 
-## Project Layout
-```
-rif-project/
-  src/rif/               # Core library
-  tests/                 # Pytest unit tests
-  examples/              # Minimal runnable demos
-  docs/                  # User & theory docs (MkDocs-ready)
-  ethics/                # Data governance & IRB templates
-  .github/workflows/     # CI (lint + tests)
-  data/                  # (Empty) Use BIDS/EEG-BIDS; keep out of git
-  notebooks/             # (Optional) Analysis notebooks
-```
-
-## Install (editable) with extras
-- `analysis` → mne, matplotlib (optional heavy deps)
-- `dev` → pytest, black, flake8, isort, mypy
-- `docs` → mkdocs, mkdocs-material
-
 ## Minimal API
+
 ```python
 from rif.rif import rif_coherence, ignition_probability
 from rif.signal import bandpass_phase
 from rif.harmonics import connectome_harmonics
 
-# phases: shape (n_oscillators, n_time)
-coh = rif_coherence(phases)
-p_ign = ignition_probability(coh, beta=12.0, threshold=0.55)
-
-# graph Laplacian eigenmodes
-evals, evecs = connectome_harmonics(A, k=32)
+coherence = rif_coherence(phases)
+probability = ignition_probability(coherence, beta=12.0, threshold=0.55)
+eigenvalues, eigenvectors = connectome_harmonics(adjacency_matrix, k=32)
 ```
 
-## Datasets & Standards
-- Use **BIDS / EEG‑BIDS** (anatomy, EEG/MEG/iEEG). Keep **PHI out of the repo**.
-- Store raw data with Datalad/OSF/Zenodo. Track only *pointers* in git.
+## Repository structure
 
-## Roadmap (high-level)
-- **M0**: Core math + toy simulations (this repo).
-- **M1**: Offline analysis pipeline for existing EEG/MEG + ECG/RESP/EGG.
-- **M2**: Real‑time closed loop (LSL) for breath/heartbeat‑locked stimulation.
-- **M3**: Hardware triggers (TMS, taVNS) + PCI (TMS‑EEG) endpoints.
+```text
+rif-project/
+  src/rif/               core library
+  tests/                 unit tests
+  examples/              synthetic demonstrations
+  docs/                  research documentation
+  ethics/                governance and IRB templates
+  data/                  placeholder only; no participant data
+  notebooks/             analysis workspace guidance
+```
 
-## How to publish this on GitHub
-1. Click **New repository** on GitHub. Name it `rif` or `rif-project`.
-2. Locally:
-   ```bash
-   git init
-   git add .
-   git commit -m "chore: bootstrap RIF skeleton"
-   git branch -M main
-   git remote add origin https://github.com/<YOUR-ORG>/rif-project.git
-   git push -u origin main
-   ```
-3. Enable **Actions**; CI runs on PRs and main.
+## Research boundary
 
-## License
-Apache‑2.0 (with patent grant). See `LICENSE`.
+The current implementation computes quantities from supplied inputs. It does not authenticate data provenance, establish causal relationships, diagnose a person, or validate a theory of consciousness. Any human study requires appropriate ethics approval, lawful data governance and an independently reviewed protocol.
 
-## Citation
-See `CITATION.cff` and cite the concept as:
-> Tan, A. & Contributors (2025). RIF — Resonant Inference Field (Bentov‑2.0). v0.1.0.
+## Licence and citation
 
----
+Original project code is licensed under the [Apache License 2.0](LICENSE), including its express patent licence. Third-party dependencies and datasets remain subject to their own terms.
 
-### Disclaimer
-This is research code. **Not a medical device.** For human studies, obtain IRB/ethics approval and comply with data protection laws.
+Citation metadata is provided in [CITATION.cff](CITATION.cff). The current concept citation is:
+
+> Tan, A. and Contributors. *RIF: Resonant Inference Field (Bentov-2.0)*, version 0.1.0, 2025.
