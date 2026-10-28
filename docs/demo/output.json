@@ -1,0 +1,56 @@
+{
+  "cases": [
+    {
+      "case": "Aligned",
+      "coherence": 1.0,
+      "logistic_output": 0.995504,
+      "phases_radians": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "case": "Spread over half a circle",
+      "coherence": 0.547661,
+      "logistic_output": 0.492983,
+      "phases_radians": [
+        -1.57079633,
+        -1.12199738,
+        -0.67319843,
+        -0.22439948,
+        0.22439948,
+        0.67319843,
+        1.12199738,
+        1.57079633
+      ]
+    },
+    {
+      "case": "Evenly spaced around a circle",
+      "coherence": 0.0,
+      "logistic_output": 0.001359,
+      "phases_radians": [
+        0.0,
+        0.78539816,
+        1.57079633,
+        2.35619449,
+        3.14159265,
+        3.92699082,
+        4.71238898,
+        5.49778714
+      ]
+    }
+  ],
+  "fixture": "eight synthetic phase angles per case; no biological data",
+  "mapping": {
+    "beta": 12.0,
+    "status": "unvalidated mathematical transform, not a measured probability",
+    "threshold": 0.55
+  },
+  "source_module_sha256": "17104a14a145ab58f9efb68c12b128b076c00ecf7d40caebeb2bdb3679d7fc51"
+}
