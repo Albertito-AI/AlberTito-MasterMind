@@ -6,6 +6,26 @@
 
 **Status:** early research prototype. The repository contains toy simulations, mathematical utilities and research-governance templates. It does not establish the hypothesis, provide a clinical conclusion or constitute a medical device.
 
+## See it in action
+
+Give the current API eight **synthetic phase angles** and it computes their
+circular coherence. Three controlled arrangements produce the observed outputs
+below; the second number is the code's unvalidated logistic transform.
+
+![RIF synthetic demo: aligned phases give coherence 1.000000, phases spread over half a circle give 0.547661, and evenly spaced phases give 0.000000.](docs/demo/demo.svg)
+
+After installing the package with the [quickstart](#quickstart), run from the
+repository root:
+
+```bash
+python scripts/readme_demo.py
+```
+
+The command prints the actual [JSON output](docs/demo/output.json). Read the
+[input formulas and reproduction notes](docs/demo/README.md) to inspect the
+calculation. The example uses no biological data and supplies no evidence that
+the logistic output is a calibrated probability of conscious access.
+
 ## Public research layer
 
 The public repository is intended to support scrutiny, replication and constructive criticism. It may contain:
