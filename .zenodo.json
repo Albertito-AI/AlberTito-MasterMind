@@ -1,0 +1,20 @@
+{
+  "title": "RIF: Resonant Inference Field",
+  "description": "One & Only Albertito  This deposit preserves a dated source snapshot of the implementation and documentation, with the limitations stated in the repository.",
+  "creators": [
+    {
+      "name": "Tan, Sin Hon Albert",
+      "orcid": "0009-0001-8996-7933"
+    }
+  ],
+  "upload_type": "software",
+  "access_right": "open",
+  "license": "Apache-2.0",
+  "notes": "Apache-2.0 applies to original code. This is a research prototype using toy simulations; the consciousness hypothesis remains unvalidated. Named contributors retain their source-level credit. Archival publication does not establish peer review, independent validation or production readiness.",
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/Albertito-AI/AlberTito-MasterMind",
+      "relation": "isSupplementTo"
+    }
+  ]
+}
